@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <h1>Sudoku</h1>
+        <div class="topbar-stats">
+          <div class="stat">
+            <span class="stat-label">Time</span>
+            <span id="timer" class="stat-value">00:00</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Mistakes</span>
+            <span id="mistakes" class="stat-value">0/3</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="game-area">
+        <div id="board" class="board" role="grid" aria-label="Sudoku board"></div>
+
+        <aside class="side-panel">
+          <div class="difficulty-picker">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+              <option value="expert">Expert</option>
+            </select>
+          </div>
+
+          <div id="numberpad" class="numberpad"></div>
+
+          <div class="action-row">
+            <button id="notes-toggle" class="btn" type="button" aria-pressed="false">Notes: Off</button>
+            <button id="erase" class="btn" type="button">Erase</button>
+          </div>
+
+          <div class="action-row">
+            <button id="undo" class="btn" type="button">Undo</button>
+            <button id="redo" class="btn" type="button">Redo</button>
+          </div>
+
+          <div class="action-row">
+            <button id="hint" class="btn" type="button">Hint</button>
+            <button id="new-game" class="btn btn-primary" type="button">New Game</button>
+          </div>
+        </aside>
+      </main>
+
+      <div id="win-banner" class="win-banner hidden">
+        <div class="win-banner-content">
+          <h2>Solved!</h2>
+          <p id="win-time"></p>
+          <button id="win-new-game" class="btn btn-primary" type="button">New Game</button>
+        </div>
+      </div>
+
+      <div id="lose-banner" class="win-banner hidden">
+        <div class="win-banner-content">
+          <h2>Game Over</h2>
+          <p>Too many mistakes.</p>
+          <button id="lose-new-game" class="btn btn-primary" type="button">New Game</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
